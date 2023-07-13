@@ -4,6 +4,9 @@
 node_modules
 .pnp
 .pnp.js
+.idea
+
+
 
 # testing
 coverage
@@ -16,6 +19,8 @@ build
 # misc
 .DS_Store
 *.pem
+
+yarn.lock
 
 # debug
 npm-debug.log*
