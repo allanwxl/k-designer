@@ -1,5 +1,5 @@
 {
-  "name": "@k-designer/ui",
+  "name": "@jiaomatech/designer-ui",
   "version": "1.0.0",
   "description": "k-designer base ui",
   "main": "dist/index.mjs",
@@ -8,7 +8,10 @@
   "scripts": {
     "build": "vue-tsc --noEmit && vite build"
   },
-  "author": "kchengz",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "jiaomatech",
   "devDependencies": {
     "vite-plugin-dts": "^3.0.3"
   }

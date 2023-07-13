@@ -50,7 +50,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { pluginManager, PageManager } from '@k-designer/utils'
+import { pluginManager, PageManager } from '@jiaomatech/designer-utils'
 import { ref, inject, computed } from 'vue'
 import KTree from '../../../../../components/KTree'
 import { NodeItem, PageSchema } from '../../../../../types/kDesigner'

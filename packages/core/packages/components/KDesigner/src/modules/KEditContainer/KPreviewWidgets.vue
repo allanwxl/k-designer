@@ -20,7 +20,7 @@
 <script lang="ts" setup>
 import { PageSchema, Designer } from '../../../../../types/kDesigner'
 import { inject, computed, ref, onMounted, watch } from 'vue'
-import { pluginManager, getUUID, deepClone, revoke, findSchemaById, useShareStore, useTimedQuery, type PageManager } from '@k-designer/utils'
+import { pluginManager, getUUID, deepClone, revoke, findSchemaById, useShareStore, useTimedQuery, type PageManager } from '@jiaomatech/designer-utils'
 import { useResizeObserver } from '@vueuse/core'
 
 const pageManager = inject('pageManager', {}) as PageManager

@@ -11,7 +11,7 @@
 </template>
 <script lang="ts" setup>
 import { Designer, PageSchema } from '../../../../../types/kDesigner'
-import { pluginManager, revoke, getAttributeValue, setAttributeValue } from '@k-designer/utils'
+import { pluginManager, revoke, getAttributeValue, setAttributeValue } from '@jiaomatech/designer-utils'
 import { inject, computed } from 'vue'
 const pageSchema = inject('pageSchema') as PageSchema
 const designer = inject('designer') as Designer

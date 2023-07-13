@@ -34,7 +34,7 @@
 </template>
 <script lang="ts" setup>
 import { shallowRef, ref, inject, computed, reactive, PropType, Slots, watch, h,nextTick, ComponentPublicInstance } from 'vue'
-import { pluginManager, capitalizeFirstLetter, PageManager } from '@k-designer/utils'
+import { pluginManager, capitalizeFirstLetter, PageManager } from '@jiaomatech/designer-utils'
 import { FormDataModel, NodeItem } from '../../../types/kDesigner'
 
 const formData = inject('formData', {}) as FormDataModel

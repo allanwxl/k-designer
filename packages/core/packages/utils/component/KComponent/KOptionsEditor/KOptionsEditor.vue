@@ -8,7 +8,7 @@
 
 <script lang="ts" setup>
 import KOptionsCol from './KOptionsCol.vue'
-import { pluginManager } from '@k-designer/utils'
+import { pluginManager } from '@jiaomatech/designer-utils'
 import { provide } from 'vue';
 const Button = pluginManager.getComponent('button')
 const modelValue = defineModel<Option[]>('modelValue')

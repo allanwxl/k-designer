@@ -32,7 +32,7 @@
   </div>
 </template>
 <script setup>
-import { KDesigner } from "@k-designer/core";
+import { KDesigner } from "@jiaomatech/designer-core";
 
 /**
  * 点击保存按钮操作
@@ -52,10 +52,10 @@ function handleSubmit(e) {
 ```
 
 <script setup>
-import "@k-designer/core/dist/style.css";
-import { pluginManager,KDesigner } from "@k-designer/core";
+import "@jiaomatech/designer-core/dist/style.css";
+import { pluginManager,KDesigner } from "@jiaomatech/designer-core";
 import 'element-plus/dist/index.css'
-import { setupElementPlus } from "@k-designer/ui";
+import { setupElementPlus } from "@jiaomatech/designer-ui";
 setupElementPlus(pluginManager);
 
 

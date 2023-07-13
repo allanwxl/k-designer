@@ -1,4 +1,4 @@
-import { type NodeItem, type SchemaGroupItem } from '@k-designer/core/packages/types/kDesigner.d'
+import { type NodeItem, type SchemaGroupItem } from '@jiaomatech/designer-core/packages/types/kDesigner.d'
 import { loadAsyncComponent } from './utils'
 import { getUUID } from './index'
 import { ref } from 'vue'

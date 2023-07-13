@@ -21,7 +21,7 @@
 
 <script lang="ts" setup>
 import draggable from 'vuedraggable'
-import { pluginManager } from '@k-designer/utils'
+import { pluginManager } from '@jiaomatech/designer-utils'
 import { inject } from 'vue';
 defineOptions({
   name: 'KOptionsCol'

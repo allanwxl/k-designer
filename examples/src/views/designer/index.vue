@@ -4,7 +4,7 @@
   <KDesigner ref="designerRef" @save="handleSubmit" />
 </template>
 <script lang="ts" setup>
-import { KDesigner, type PageSchema } from '@k-designer/core/packages/index'
+import { KDesigner, type PageSchema } from '@jiaomatech/designer-core/packages/index'
 import { ref } from 'vue'
 const designerRef = ref<typeof KDesigner>()
 // function handleGet () {

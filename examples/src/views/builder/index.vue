@@ -16,8 +16,8 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { KBuilder } from '@k-designer/core/packages'
-import { NodeItem } from '@k-designer/core/packages/types/kDesigner'
+import { KBuilder } from '@jiaomatech/designer-core/packages'
+import { NodeItem } from '@jiaomatech/designer-core/packages/types/kDesigner'
 
 const kfb = ref<any>(null)
 async function handleGetData () {

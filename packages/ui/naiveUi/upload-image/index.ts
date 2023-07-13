@@ -1,4 +1,4 @@
-import { type ComponentConfigModel } from '@k-designer/utils'
+import { type ComponentConfigModel } from '@jiaomatech/designer-utils'
 export default {
   component: () => import('./uploadImage'),
   defaultSchema: {
