@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-import { pluginManager } from '@k-designer/core/packages/index'
+import { pluginManager } from "@jiaomatech/designer-utils"
 // // // 使用Elemnt UI
 // import 'element-plus/dist/index.css'
 // import { setupElementPlus } from '@k-designer/ui/elementPlus'
@@ -13,7 +13,7 @@ import { pluginManager } from '@k-designer/core/packages/index'
 // setupAntd(pluginManager)
 
 // 使用NaiveUi UI
-import { setupNaiveUi } from '@k-designer/ui/naiveUi'
+import { setupNaiveUi } from '@jiaomatech/designer-ui/naiveUi'
 setupNaiveUi(pluginManager)
 
 createApp(App).mount('#app')

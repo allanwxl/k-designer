@@ -1,6 +1,6 @@
 // 注册ant-design-vue ui
 // import { type PluginManager } from '../../utils/pluginManager'
-import { type PluginManager } from '../../utils/pluginManager'
+import { type PluginManager } from '@jiaomatech/designer-utils/dist'
 import Input from './input'
 import Textarea from './textarea'
 import InputNumber from './input-number'
