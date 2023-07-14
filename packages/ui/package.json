@@ -1,6 +1,6 @@
 {
   "name": "@jiaomatech/designer-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "k-designer base ui",
   "main": "dist/index.mjs",
   "module": "dist/index.mjs",
