@@ -6,32 +6,31 @@ export default defineComponent({
     record: {
       type: Object as PropType<NodeItem>,
       required: true,
-      default: () => ({})
-    }
+      default: () => ({}),
+    },
   },
-  setup (props, { attrs, slots }) {
+  setup(props, { attrs, slots }) {
     return () => {
       const record = {
         ...props.record,
-        header: props.record?.label ?? ''
-      } as NodeItem
-      const children = record.children ?? []
-      delete record.children
+        header: props.record?.label ?? "",
+      } as NodeItem;
+      const children = record.children ?? [];
+      delete record.children;
 
-      let vNodeClildren:any = null
-      if(children.length){
-        vNodeClildren =  children.map((node: NodeItem) =>
-          renderSlot(slots, 'node', { record: node })
-        )
-      }else{
-        vNodeClildren = ()=> [renderSlot(slots, 'default')]
+      let vNodeClildren: any = null;
+      if (children.length) {
+        vNodeClildren = () =>
+          children.map((node: NodeItem) =>
+            renderSlot(slots, "node", { record: node })
+          );
+      } else {
+        vNodeClildren = () => [renderSlot(slots, "default")];
       }
-
       return h(ElCard, record, {
-        default: () =>
-          renderSlot(slots, 'edit-node', {},vNodeClildren),
-        header:()=> renderSlot(slots, 'header'),
-      })
-    }
-  }
-})
+        default: () => renderSlot(slots, "edit-node", {}, vNodeClildren),
+        header: () => renderSlot(slots, "header"),
+      });
+    };
+  },
+});

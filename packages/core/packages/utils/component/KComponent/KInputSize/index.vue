@@ -1,36 +1,14 @@
 <template>
-  <Input
-    v-model="size"
-    v-model:value="size"
-    type="number"
-    min="0"
-    @input="handleUpdate"
-  >
-    <!-- elment ui slot start -->
-    <template #append>
-      <Select
-        v-model="unit"
-        style="width: 68px"
-        :options="unitArray"
-        @change="handleUpdate"
-      />
-    </template>
-    <!-- elment ui slot end -->
-    <!-- antd ui slot start -->
-    <template #addonAfter>
-      <Select
-        v-model:value="unit"
-        style="width: 68px"
-        :options="unitArray"
-        @change="handleUpdate"
-      />
-    </template>
-  <!-- antd ui slot end -->
+  <Input class="k-input-size" v-model="size" v-model:value="size" type="number" min="0" placeholder="请输入"
+    @input="handleUpdate">
+  <template #suffix>
+    <Select v-model:value="unit" v-model="unit" style="width: 68px" :options="unitArray" @change="handleUpdate" />
+  </template>
   </Input>
 </template>
 <script lang="ts" setup>
+import { ref, watch, nextTick } from 'vue'
 import { pluginManager } from '@jiaomatech/designer-utils'
-import { ref, watch } from 'vue'
 const Input = pluginManager.getComponent('input')
 const Select = pluginManager.getComponent('select')
 const props = defineProps({
@@ -40,7 +18,7 @@ const props = defineProps({
   }
 })
 const emit = defineEmits(['update:modelValue'])
-const size = ref < string | null >(null)
+const size = ref<string | null>(null)
 const unit = ref('px')
 const unitArray = [
   { label: 'px', value: 'px' },
@@ -64,8 +42,8 @@ watch(() => props.modelValue, e => {
   immediate: true
 })
 
-function handleUpdate () {
-  emit('update:modelValue', size.value ? size.value + unit.value : undefined)
+function handleUpdate() {
+  nextTick(() => emit('update:modelValue', size.value ? size.value + unit.value : undefined))
 }
 
 </script>
