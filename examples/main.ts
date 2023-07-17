@@ -4,14 +4,14 @@ import App from "./App.vue";
 
 
 
-import { pluginManager } from "../packages/index";
+import { pluginManager } from "../dist";
 
 
 // 引入Element plus样式
-import "element-plus/dist/index.css";
-import { setupElementPlus } from '../packages/ui/elementPlus'
+import "ant-design-vue/dist/antd.css";
+import { setupAntd } from '../dist/ui/antd'
 // 使用Elemnt UI
-setupElementPlus(pluginManager);
+setupAntd(pluginManager);
 
 
 // // 引入antd UI样式
