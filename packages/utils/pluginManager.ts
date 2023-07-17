@@ -93,10 +93,7 @@ export class PluginManager {
 
   /**
    * 注册组件到插件管理器中
-   * @param component 组件
-   * @param schema 组件结构
-   * @param attrSchemas 属性结构
-   * @param bindModel 双向绑定value
+   * @param componentConfig
    */
   registerComponent (componentConfig: ComponentConfigModel): void {
     // 添加组件

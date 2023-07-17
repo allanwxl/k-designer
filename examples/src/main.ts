@@ -8,7 +8,7 @@ import { pluginManager } from "@jiaomatech/designer-utils"
 // setupElementPlus(pluginManager)
 
 // // 使用Antd UI
-// import 'ant-design-vue/dist/antd.css'
+import 'ant-design-vue/dist/antd.css'
 // import { setupAntd } from '@jiaomatech/designer-ui/antd'
 // setupAntd(pluginManager)
 
@@ -16,5 +16,7 @@ import { pluginManager } from "@jiaomatech/designer-utils"
 // import { setupNaiveUi } from '@jiaomatech/designer-ui/naiveUi'
 import { setupAntd } from '@jiaomatech/designer-ui/antd';
 setupAntd(pluginManager)
+
+console.log(pluginManager.getComponents())
 
 createApp(App).mount('#app')

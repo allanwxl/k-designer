@@ -175,6 +175,7 @@ async function initComponent() {
   // 内部不存在组件
   if (!cmp) {
     console.error(`组件${props.record.type}未注册`)
+    console.log('当前注册组件', pluginManager.getComponents())
     return false
   }
   const bindModel = getComponentConfing.value?.bindModel ?? 'modelValue'
