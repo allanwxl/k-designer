@@ -33,7 +33,7 @@
   <!-- 无需FormItem end -->
 </template>
 <script lang="ts" setup>
-import { shallowRef, ref, inject, computed, reactive, PropType, Slots, watch, h,nextTick, ComponentPublicInstance } from 'vue'
+import { shallowRef, ref, inject, computed, reactive, PropType, Slots, watch, h, nextTick, ComponentPublicInstance } from 'vue'
 import { pluginManager, capitalizeFirstLetter, PageManager } from '@jiaomatech/designer-utils'
 import { FormDataModel, NodeItem } from '../../../types/kDesigner'
 

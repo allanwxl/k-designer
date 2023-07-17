@@ -13,7 +13,8 @@ import { pluginManager } from "@jiaomatech/designer-utils"
 // setupAntd(pluginManager)
 
 // 使用NaiveUi UI
-import { setupNaiveUi } from '@jiaomatech/designer-ui/naiveUi'
-setupNaiveUi(pluginManager)
+// import { setupNaiveUi } from '@jiaomatech/designer-ui/naiveUi'
+import { setupAntd } from '@jiaomatech/designer-ui/antd';
+setupAntd(pluginManager)
 
 createApp(App).mount('#app')
