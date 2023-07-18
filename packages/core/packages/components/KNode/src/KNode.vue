@@ -35,7 +35,9 @@
 <script lang="ts" setup>
 import { shallowRef, ref, inject, computed, reactive, PropType, Slots, watch, h, nextTick, ComponentPublicInstance } from 'vue'
 import { pluginManager, capitalizeFirstLetter, PageManager } from '@jiaomatech/designer-utils'
-import { FormDataModel, NodeItem } from '../../../types/kDesigner'
+// import { pluginManager, capitalizeFirstLetter, PageManager } from '@jiaomatech/designer-core'
+// import { FormDataModel, NodeItem } from '../../../types/kDesigner'
+import { FormDataModel, NodeItem } from '@jiaomatech/designer-core/packages/types/kDesigner'
 
 const formData = inject('formData', {}) as FormDataModel
 const slots = inject('slots', {}) as Slots
