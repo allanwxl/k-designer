@@ -1,7 +1,7 @@
 {
-  "name": "@jj-designer/core",
+  "name": "@jiaomatech/designer-core",
   "private": false,
-  "version": "0.0.42",
+  "version": "0.0.47",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -17,12 +17,15 @@
     "可视化",
     "工作流"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
-    "url": "https://github.com/Kchengz/k-designer/issues"
+    "url": "https://github.com/allanwxl/k-designer/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kchengz/k-designer"
+    "url": "https://github.com/allanwxl/k-designer.git"
   },
   "scripts": {
     "build": "vue-tsc --noEmit && vite build",

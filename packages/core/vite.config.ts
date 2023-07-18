@@ -15,7 +15,7 @@ export default defineConfig({
     UnoCSS(),
     dts({
       entryRoot: 'packages',
-      outDir: 'dist'
+      outDir: 'dist',
     }) as PluginOption
     // eslintPlugin({
     //   include: [
@@ -34,13 +34,13 @@ export default defineConfig({
     dedupe: ['vue']
   },
   // 单元测试配置
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    transformMode: {
-      web: [/.[tj]sx$/]
-    }
-  },
+  // test: {
+  //   globals: true,
+  //   environment: 'jsdom',
+  //   transformMode: {
+  //     web: [/.[tj]sx$/]
+  //   }
+  // },
   // rollup打包配置
   build: {
     outDir: 'dist', // 输出文件名称

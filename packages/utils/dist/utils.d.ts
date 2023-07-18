@@ -1,4 +1,4 @@
-import { type NodeItem } from "@k-designer/core/packages/types/kDesigner";
+import { type NodeItem } from "@jiaomatech/designer-core/packages/types/kDesigner";
 import { type AsyncComponentLoader, type Component } from "vue";
 /**
  * 生成一个用不重复的ID

@@ -23,7 +23,7 @@
 <script lang="ts" setup>
 import draggable from 'vuedraggable'
 import { computed, inject } from 'vue'
-import { revoke } from '@k-designer/utils'
+import { revoke } from '@jiaomatech/designer-utils'
 import { NodeItem, PageSchema, Designer } from '../../../../../types/kDesigner'
 import KNodeItem from './KNodeItem.vue'
 const designer = inject('designer') as Designer

@@ -10,9 +10,10 @@
         @click="handleClick(item, index)"
       >
         <span
-          class="iconfont"
+          class="iconfont relative m-1"
           :class="item.icon"
         />
+        <div class="text-14px">{{ item.title }}</div>
       </li>
     </ul>
   </div>
@@ -27,8 +28,8 @@
 </template>
 <script lang="ts" setup>
 import { ref, shallowRef } from 'vue'
-import { pluginManager } from '@k-designer/utils'
-import { ActivitybarModel } from '@k-designer/utils/pluginManager'
+import { pluginManager } from '@jiaomatech/designer-utils'
+import { ActivitybarModel } from '@jiaomatech/designer-utils/pluginManager'
 
 const activitybars = pluginManager.getActivitybars()
 const actionBarCheckedIndex = ref<number | null>(0)

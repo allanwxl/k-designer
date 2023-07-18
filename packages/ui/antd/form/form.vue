@@ -10,7 +10,7 @@
 <script lang="ts" setup>
 import { ref, type Ref, type PropType, computed, inject, useAttrs, onMounted } from 'vue'
 import { Form } from 'ant-design-vue'
-import type { NodeItem } from '@k-designer/core/packages/types/kDesigner'
+import type { NodeItem } from '@jiaomatech/designer-core/packages/types/kDesigner'
 
 
 interface KForm extends InstanceType<typeof Form> {

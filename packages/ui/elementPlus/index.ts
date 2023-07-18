@@ -1,5 +1,5 @@
 // 注册element-plus ui
-import { type PluginManager } from '../../utils/pluginManager'
+import { type PluginManager } from '@jiaomatech/designer-utils/dist'
 import Input from './input'
 import InputNumber from './input-number'
 import Form from './form'
@@ -73,7 +73,7 @@ export function setupElementPlus (pluginManager: PluginManager): void {
   // 设置分组显示
   pluginManager.setSchemaGroup([
     {
-      title: '输入组件',
+      title: '输入',
       list: [
         'form',
         'input',
@@ -97,7 +97,7 @@ export function setupElementPlus (pluginManager: PluginManager): void {
       ]
     },
     {
-      title: '布局组件',
+      title: '布局',
       list: ['card', 'row', 'tabs']
     }
   ])

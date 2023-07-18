@@ -1,6 +1,6 @@
 {
-  "name": "@k-designer/utils",
-  "version": "1.0.0",
+  "name": "@jiaomatech/designer-utils",
+  "version": "1.0.3",
   "description": "k-designer utils",
   "main": "dist/index.mjs",
   "module": "dist/index.mjs",
@@ -8,5 +8,8 @@
   "scripts": {
     "build": "vue-tsc --noEmit && vite build"
   },
-  "author": "kchengz"
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "jiaomatech"
 }

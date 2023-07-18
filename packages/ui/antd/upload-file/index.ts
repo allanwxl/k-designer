@@ -1,4 +1,4 @@
-import { type ComponentConfigModel } from '@k-designer/utils/pluginManager'
+import { type ComponentConfigModel } from '@jiaomatech/designer-utils/pluginManager'
 export default {
   component: () => import('./uploadFile'),
   defaultSchema: {
@@ -22,6 +22,24 @@ export default {
         label: '文字',
         type: 'input',
         field: 'label'
+      },
+      {
+        label: '请求地址',
+        type: 'input',
+        field: 'componentProps.action'
+      },
+      {
+        label: '多选',
+        type: 'switch',
+        field: 'componentProps.multiple'
+      },
+      {
+        label: '允许上传最大数量',
+        type: 'number',
+        field: 'componentProps.maxCount',
+        componentProps: {
+          min:0
+        }
       },
       {
         label: '隐藏',

@@ -33,9 +33,11 @@
   <!-- 无需FormItem end -->
 </template>
 <script lang="ts" setup>
-import { shallowRef, ref, inject, computed, reactive, PropType, Slots, watch, h,nextTick, ComponentPublicInstance } from 'vue'
-import { pluginManager, capitalizeFirstLetter, PageManager } from '@k-designer/utils'
-import { FormDataModel, NodeItem } from '../../../types/kDesigner'
+import { shallowRef, ref, inject, computed, reactive, PropType, Slots, watch, h, nextTick, ComponentPublicInstance } from 'vue'
+import { pluginManager, capitalizeFirstLetter, PageManager } from '@jiaomatech/designer-utils'
+// import { pluginManager, capitalizeFirstLetter, PageManager } from '@jiaomatech/designer-core'
+// import { FormDataModel, NodeItem } from '../../../types/kDesigner'
+import { FormDataModel, NodeItem } from '@jiaomatech/designer-core/packages/types/kDesigner'
 
 const formData = inject('formData', {}) as FormDataModel
 const slots = inject('slots', {}) as Slots
@@ -175,6 +177,7 @@ async function initComponent() {
   // 内部不存在组件
   if (!cmp) {
     console.error(`组件${props.record.type}未注册`)
+    console.log('当前注册组件', pluginManager.getComponents())
     return false
   }
   const bindModel = getComponentConfing.value?.bindModel ?? 'modelValue'
