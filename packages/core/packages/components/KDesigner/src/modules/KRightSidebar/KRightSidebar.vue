@@ -24,8 +24,8 @@
 </template>
 <script lang="ts" setup>
 import { ref, shallowRef } from 'vue'
-import { pluginManager } from '@jiaomatech/designer-utils'
-import { RightSidebarModel } from '@jiaomatech/designer-utils/pluginManager'
+import { pluginManager, RightSidebarModel } from '@jiaomatech/designer-utils'
+// import { RightSidebarModel } from '@jiaomatech/designer-utils/pluginManager'
 
 const rightSidebars = pluginManager.getRightSidebars()
 const actionBarCheckedIndex = ref<number | null>(0)

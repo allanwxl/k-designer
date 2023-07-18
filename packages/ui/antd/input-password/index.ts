@@ -1,4 +1,4 @@
-import { type ComponentConfigModel } from '@jiaomatech/designer-utils/pluginManager'
+import { type ComponentConfigModel } from '@jiaomatech/designer-utils'
 export default {
   component: async () =>
     (await import('ant-design-vue/lib/input')).InputPassword,

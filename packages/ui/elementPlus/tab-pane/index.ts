@@ -1,4 +1,4 @@
-import { type ComponentConfigModel } from '@jiaomatech/designer-utils/pluginManager'
+import { type ComponentConfigModel } from '@jiaomatech/designer-utils'
 export default {
   component: () => import('./tabPane'),
   defaultSchema: {

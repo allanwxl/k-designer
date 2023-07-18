@@ -8,7 +8,9 @@ import { initComponent } from './utils/component/init'
 import './index.less'
 export type { NodeItem, PageSchema } from './types/kDesigner.d'
 // 初始化设计器
+console.log('初始化设计器: initComponent')
 initComponent(pluginManager)
+console.log('注册组件: ', pluginManager.getComponents())
 // const components = [KBuilder, KDesigner]
 
 // 注册全局组件

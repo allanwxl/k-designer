@@ -1,4 +1,4 @@
-import { type ComponentConfigModel } from '@jiaomatech/designer-utils/pluginManager'
+import { type ComponentConfigModel } from '@jiaomatech/designer-utils'
 export default {
   component: async () => (await import('naive-ui/lib/switch')).NSwitch,
   defaultSchema: {
