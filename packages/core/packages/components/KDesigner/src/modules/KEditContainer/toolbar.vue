@@ -16,18 +16,20 @@
             <Select v-model:value="canvasScaleComuted" v-model="canvasScaleComuted" :options="canvasScaleOptions"
                 size="small"></Select>
         </div>
+        <!--
         <div class="w-90px cursor-pointer">
             <Slider :min="0.2" :max="2" :step="0.1" :tooltip="false" v-model:value="canvasScale" v-model="canvasScale" />
         </div>
+        -->
         <!-- 缩放操作 end  -->
     </div>
     <!-- 工具条 end  -->
 </template>
 <script lang="ts" setup>
-import { useShareStore, pluginManager, deepCompareAndModify } from '@k-designer/utils'
+import { useShareStore, pluginManager, deepCompareAndModify } from '@jiaomatech/designer-utils'
 import type { PageSchema } from '../../../../../types/kDesigner'
 import { computed, inject, ref } from 'vue'
-const Slider = pluginManager.getComponent('slider')
+// const Slider = pluginManager.getComponent('slider')
 const Select = pluginManager.getComponent('select')
 const { canvasScale } = useShareStore()
 

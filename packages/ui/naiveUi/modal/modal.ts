@@ -1,5 +1,5 @@
 import { defineComponent, h, renderSlot, type PropType } from "vue";
-import { type NodeItem } from "@k-designer/core/packages/types/kDesigner";
+import { type NodeItem } from "@jiaomatech/designer-core/packages/types/kDesigner";
 import { NModal, NButton, NSpace } from "naive-ui";
 
 export default defineComponent({

@@ -1,8 +1,8 @@
 var L = Object.defineProperty;
-var M = (t, e, n) => e in t ? L(t, e, { enumerable: !0, configurable: !0, writable: !0, value: n }) : t[e] = n;
-var m = (t, e, n) => (M(t, typeof e != "symbol" ? e + "" : e, n), n);
-import { defineAsyncComponent as G, ref as p, effectScope as T, getCurrentScope as x, onScopeDispose as k, unref as b, watch as O } from "vue";
-function K(t = 10) {
+var G = (t, e, n) => e in t ? L(t, e, { enumerable: !0, configurable: !0, writable: !0, value: n }) : t[e] = n;
+var m = (t, e, n) => (G(t, typeof e != "symbol" ? e + "" : e, n), n);
+import { defineAsyncComponent as T, ref as f, effectScope as x, getCurrentScope as b, onScopeDispose as k, unref as K, watch as E } from "vue";
+function J(t = 10) {
   return (+`${Math.random().toString().substring(3, t)}${Date.now()}`).toString(36);
 }
 function oe(t) {
@@ -14,7 +14,7 @@ function w(t, e = /* @__PURE__ */ new WeakMap()) {
   if (e.has(t))
     return e.get(t);
   if (Array.isArray(t)) {
-    const r = t.map((o) => w(o, e));
+    const r = t.map((s) => w(s, e));
     return e.set(t, r), r;
   }
   const n = {};
@@ -22,10 +22,10 @@ function w(t, e = /* @__PURE__ */ new WeakMap()) {
     n[r] = w(t[r], e);
   }), n;
 }
-function B(t, e) {
+function U(t, e) {
   for (const [n, r] of Object.entries(e)) {
-    const o = t == null ? void 0 : t[n];
-    o && r && typeof o == "object" && typeof r == "object" ? B(o, r) : t[n] = r;
+    const s = t == null ? void 0 : t[n];
+    s && r && typeof s == "object" && typeof r == "object" ? U(s, r) : t[n] = r;
   }
   Object.keys(t).reverse().forEach((n) => {
     e.hasOwnProperty(n) || (Array.isArray(e) ? t.splice(n, 1) : delete t[n]);
@@ -38,17 +38,17 @@ function ue(t, e, n = /* @__PURE__ */ new WeakMap()) {
     if (typeof s == "object" && s !== null) {
       if (n.has(s))
         return "[Circular]";
-      n.set(o, !0);
-      const s = Object.keys(o).sort(), a = {};
-      return s.forEach((i) => {
-        a[i] = r(o[i]);
-      }), n.delete(o), a;
+      n.set(s, !0);
+      const o = Object.keys(s).sort(), l = {};
+      return o.forEach((u) => {
+        l[u] = r(s[u]);
+      }), n.delete(s), l;
     } else
       return s;
   };
   return JSON.stringify(r(t)) === JSON.stringify(r(e));
 }
-const v = (t, e) => B({
+const v = (t, e) => T({
   loader: t,
   loadingComponent: e,
   delay: 80
@@ -56,30 +56,30 @@ const v = (t, e) => B({
 function ie(t, e) {
   const n = [{ type: "root", children: t }];
   for (; n.length > 0; ) {
-    const r = n.pop(), o = r == null ? void 0 : r.children;
-    if (o != null)
-      for (let s = 0; s < o.length; s++) {
-        if (o[s].id === e)
+    const r = n.pop(), s = r == null ? void 0 : r.children;
+    if (s != null)
+      for (let o = 0; o < s.length; o++) {
+        if (s[o].id === e)
           return {
             list: (r == null ? void 0 : r.children) ?? [],
-            schema: o[s],
-            index: s
+            schema: s[o],
+            index: o
           };
-        n.push(...o);
+        n.push(...s);
       }
   }
   throw new Error(`没有查询到id为${e}的节点`);
 }
-function ue(t, e) {
+function ae(t, e) {
   const n = [];
   let r = !1;
-  function o(s) {
-    if (n.push(s), s.id === e && (r = !0), !r && s.children != null && s.children.length > 0)
-      for (let a = 0; a < s.children.length && (o(s.children[a]), !r); a++)
+  function s(o) {
+    if (n.push(o), o.id === e && (r = !0), !r && o.children != null && o.children.length > 0)
+      for (let l = 0; l < o.children.length && (s(o.children[l]), !r); l++)
         ;
     r || n.pop();
   }
-  return t.forEach(o), r || console.error(`没有查询到id为${e}的节点`), n;
+  return t.forEach(s), r || console.error(`没有查询到id为${e}的节点`), n;
 }
 function le(t, e) {
   const n = t.split(".");
@@ -91,16 +91,16 @@ function le(t, e) {
 }
 function ce(t, e, n) {
   const r = e.split(".");
-  let o = n;
-  r.forEach((s, a) => {
-    if (a === r.length - 1) {
-      o[s] = t;
+  let s = n;
+  r.forEach((o, l) => {
+    if (l === r.length - 1) {
+      s[o] = t;
       return;
     }
-    o = o[s] ?? (o[s] = {});
+    s = s[o] ?? (s[o] = {});
   });
 }
-class U {
+class B {
   constructor() {
     m(this, "components", {});
     m(this, "componentConfigs", {});
@@ -130,10 +130,7 @@ class U {
   }
   /**
    * 注册组件到插件管理器中
-   * @param component 组件
-   * @param schema 组件结构
-   * @param attrSchemas 属性结构
-   * @param bindModel 双向绑定value
+   * @param componentConfig
    */
   registerComponent(e) {
     this.component(
@@ -220,12 +217,12 @@ class U {
    */
   computedSchemaGroupList() {
     const e = this.schemaGroup.map((n) => {
-      const r = n.list.map((o) => {
-        var a;
-        const s = (a = this.componentConfigs[o]) == null ? void 0 : a.defaultSchema;
-        return s == null ? (console.warn(`${o} 组件未注册到pluginManager中`), !1) : {
-          ...s,
-          id: K()
+      const r = n.list.map((s) => {
+        var l;
+        const o = (l = this.componentConfigs[s]) == null ? void 0 : l.defaultSchema;
+        return o == null ? (console.warn(`${s} 组件未注册到pluginManager中`), !1) : {
+          ...o,
+          id: J()
         };
       }).filter((s) => s);
       return {
@@ -250,38 +247,36 @@ class U {
     this.publicMethods[e.methodName] = e;
   }
 }
-const U = new J();
-function ce() {
-  const t = p({}), e = p({});
-  function n(u) {
-    return t.value[u];
+const C = new B();
+function fe() {
+  const t = f({}), e = f({});
+  function n(i) {
+    return t.value[i];
   }
-  function r(u, c) {
-    t.value[u] = c;
+  function r(i, c) {
+    t.value[i] = c;
   }
-  function o(u) {
-    delete t.value[u];
+  function s(i) {
+    delete t.value[i];
   }
-  function s(u) {
-    const c = Object.entries(U.publicMethods).reduce(
-      (l, [f, d]) => (l[f] = d.method, l),
-      {}
-    );
-    new Function(`${u}`).bind({
+  function o(i) {
+    const c = Object.entries(
+      C.publicMethods
+    ).reduce((a, [p, d]) => (a[p] = d.method, a), {});
+    new Function(`${i}`).bind({
       getComponent: n,
-      defineExpose: a,
+      defineExpose: l,
       ...c
     })();
   }
-  function a(u) {
-    u != null && (e.value = u);
+  function l(i) {
+    i != null && (e.value = i);
   }
-  function i(u, ...c) {
-    u == null || u.forEach((l) => {
-      var d, h;
-      const f = l.componentId != null && n(l.componentId);
-      if (f && typeof f[l.methodName] == "function") {
-        f[l.methodName](...c);
+  function u(i, ...c) {
+    i == null || i.forEach((a) => {
+      var p, d, h;
+      if (a.type === "public" && ((p = C.publicMethods[a.methodName]) == null || p.method(a.args)), a.type === "custom" && ((h = (d = e.value)[a.methodName]) == null || h.call(d, ...c)), a.type === "component") {
+        (a.componentId != null && n(a.componentId))[a.methodName](...c);
         return;
       }
     });
@@ -291,55 +286,55 @@ function ce() {
     funcs: e,
     getComponentInstance: n,
     addComponentInstance: r,
-    removeComponentInstance: o,
-    setMethods: s,
-    doActions: i
+    removeComponentInstance: s,
+    setMethods: o,
+    doActions: u
   };
 }
 function R() {
   const t = f([]), e = f([]), n = f(null);
   let r = 0;
-  function o(i, u = "插入组件") {
+  function s(u, i = "插入组件") {
     const c = Date.now();
     r + 150 > c || (r = c, n.value != null && (t.value.push(n.value), e.value.splice(0, e.value.length)), n.value = {
-      type: u,
-      record: JSON.stringify(i)
+      type: i,
+      record: JSON.stringify(u)
     }, t.value.length > 20 && t.value.unshift());
   }
   function o() {
     if (t.value.length === 0)
       return !1;
-    const i = t.value.pop();
-    return n.value != null && e.value.push(n.value), n.value = i, JSON.parse(i.record);
+    const u = t.value.pop();
+    return n.value != null && e.value.push(n.value), n.value = u, JSON.parse(u.record);
   }
-  function a() {
+  function l() {
     if (e.value.length === 0)
       return !1;
-    const i = e.value.pop();
-    return n.value != null && t.value.push(n.value), n.value = i, JSON.parse(i.record);
+    const u = e.value.pop();
+    return n.value != null && t.value.push(n.value), n.value = u, JSON.parse(u.record);
   }
   return {
     recordList: t,
     undoList: e,
     currentRecord: n,
-    push: o,
-    undo: s,
-    redo: a
+    push: s,
+    undo: o,
+    redo: l
   };
 }
-const fe = R();
-function E(t) {
-  return x() ? (k(t), !0) : !1;
-}
+const pe = R();
 function P(t) {
+  return b() ? (k(t), !0) : !1;
+}
+function I(t) {
   let e = 0, n, r;
   const s = () => {
     e -= 1, r && e <= 0 && (r.stop(), n = void 0, r = void 0);
   };
-  return (...s) => (e += 1, n || (r = T(!0), n = r.run(() => t(...s))), E(o), n);
+  return (...o) => (e += 1, n || (r = x(!0), n = r.run(() => t(...o))), P(s), n);
 }
 function S(t) {
-  return typeof t == "function" ? t() : b(t);
+  return typeof t == "function" ? t() : K(t);
 }
 const V = typeof window < "u", W = () => {
 };
@@ -348,56 +343,56 @@ function z(t) {
   const n = S(t);
   return (e = n == null ? void 0 : n.$el) != null ? e : n;
 }
-const I = V ? window : void 0;
+const N = V ? window : void 0;
 function Q(...t) {
-  let e, n, r, o;
-  if (typeof t[0] == "string" || Array.isArray(t[0]) ? ([n, r, o] = t, e = I) : [e, n, r, o] = t, !e)
+  let e, n, r, s;
+  if (typeof t[0] == "string" || Array.isArray(t[0]) ? ([n, r, s] = t, e = N) : [e, n, r, s] = t, !e)
     return W;
   Array.isArray(n) || (n = [n]), Array.isArray(r) || (r = [r]);
-  const s = [], a = () => {
-    s.forEach((l) => l()), s.length = 0;
-  }, i = (l, f, d, h) => (l.addEventListener(f, d, h), () => l.removeEventListener(f, d, h)), u = O(
-    () => [z(e), S(o)],
-    ([l, f]) => {
-      a(), l && s.push(
-        ...n.flatMap((d) => r.map((h) => i(l, d, h, f)))
+  const o = [], l = () => {
+    o.forEach((a) => a()), o.length = 0;
+  }, u = (a, p, d, h) => (a.addEventListener(p, d, h), () => a.removeEventListener(p, d, h)), i = E(
+    () => [z(e), S(s)],
+    ([a, p]) => {
+      l(), a && o.push(
+        ...n.flatMap((d) => r.map((h) => u(a, d, h, p)))
       );
     },
     { immediate: !0, flush: "post" }
   ), c = () => {
-    u(), a();
+    i(), l();
   };
-  return E(c), c;
+  return P(c), c;
 }
-var X = Object.defineProperty, Y = Object.defineProperties, Z = Object.getOwnPropertyDescriptors, C = Object.getOwnPropertySymbols, q = Object.prototype.hasOwnProperty, H = Object.prototype.propertyIsEnumerable, A = (t, e, n) => e in t ? X(t, e, { enumerable: !0, configurable: !0, writable: !0, value: n }) : t[e] = n, N = (t, e) => {
+var X = Object.defineProperty, Y = Object.defineProperties, Z = Object.getOwnPropertyDescriptors, A = Object.getOwnPropertySymbols, q = Object.prototype.hasOwnProperty, H = Object.prototype.propertyIsEnumerable, O = (t, e, n) => e in t ? X(t, e, { enumerable: !0, configurable: !0, writable: !0, value: n }) : t[e] = n, _ = (t, e) => {
   for (var n in e || (e = {}))
-    q.call(e, n) && A(t, n, e[n]);
-  if (C)
-    for (var n of C(e))
-      H.call(e, n) && A(t, n, e[n]);
+    q.call(e, n) && O(t, n, e[n]);
+  if (A)
+    for (var n of A(e))
+      H.call(e, n) && O(t, n, e[n]);
   return t;
-}, _ = (t, e) => Y(t, Z(e));
+}, D = (t, e) => Y(t, Z(e));
 function F(t) {
   return typeof t == "function" ? t : typeof t == "string" ? (e) => e.key === t : Array.isArray(t) ? (e) => t.includes(e.key) : () => !0;
 }
-function D(...t) {
+function M(...t) {
   let e, n, r = {};
   t.length === 3 ? (e = t[0], n = t[1], r = t[2]) : t.length === 2 ? typeof t[1] == "object" ? (e = !0, n = t[0], r = t[1]) : (e = t[0], n = t[1]) : (e = !0, n = t[0]);
   const {
-    target: o = I,
-    eventName: s = "keydown",
-    passive: a = !1,
-    dedupe: i = !1
-  } = r, u = F(e);
-  return Q(o, s, (l) => {
-    l.repeat && S(i) || u(l) && n(l);
-  }, a);
+    target: s = N,
+    eventName: o = "keydown",
+    passive: l = !1,
+    dedupe: u = !1
+  } = r, i = F(e);
+  return Q(s, o, (a) => {
+    a.repeat && S(u) || i(a) && n(a);
+  }, l);
 }
 function y(t, e, n = {}) {
-  return D(t, e, _(N({}, n), { eventName: "keydown" }));
+  return M(t, e, D(_({}, n), { eventName: "keydown" }));
 }
 function g(t, e, n = {}) {
-  return D(t, e, _(N({}, n), { eventName: "keyup" }));
+  return M(t, e, D(_({}, n), { eventName: "keyup" }));
 }
 function j() {
   const t = f(!1), e = f(!1), n = f(!1);
@@ -421,24 +416,24 @@ function ee() {
     canvasScale: f(1)
   };
 }
-const te = P(ee), $ = P(j);
-function pe(t) {
+const te = I(ee), $ = I(j);
+function de(t) {
   const { pressSpace: e } = $();
   let n = 0, r = 0;
-  function o(i) {
-    var u;
-    n = i.x, r = i.y, (u = i.dataTransfer) == null || u.setDragImage(document.createElement("div"), 0, 0);
+  function s(u) {
+    var i;
+    n = u.x, r = u.y, (i = u.dataTransfer) == null || i.setDragImage(document.createElement("div"), 0, 0);
   }
-  function s(i) {
-    if (i.preventDefault(), !i.x || !i.y || !e.value)
+  function o(u) {
+    if (u.preventDefault(), !u.x || !u.y || !e.value)
       return;
-    const u = i.x - n, c = i.y - r;
-    n = i.x, r = i.y, t.value && (t.value.scrollTop -= c, t.value.scrollLeft -= u);
+    const i = u.x - n, c = u.y - r;
+    n = u.x, r = u.y, t.value && (t.value.scrollTop -= c, t.value.scrollLeft -= i);
   }
-  function a() {
+  function l() {
     e.value = !1;
   }
-  return { handleElementDragStart: o, handleElementDrag: s, handleElementDragEnd: a };
+  return { handleElementDragStart: s, handleElementDrag: o, handleElementDragEnd: l };
 }
 function he(t) {
   const { pressCtrl: e } = $(), { canvasScale: n } = te();
@@ -449,7 +444,7 @@ function he(t) {
     let o = 0;
     s.deltaY < 0 ? o = n.value + 0.05 : o = n.value - 0.05, !(o > 2 || o < 0.2) && (n.value = o);
   }
-  return O(
+  return E(
     () => n.value,
     (s) => {
       t.value && (t.value.style.transform = `scale(${s})`);
@@ -460,8 +455,8 @@ function me(t, e = 16.66) {
   let n;
   function r() {
     clearInterval(n);
-    const s = setInterval(t, e);
-    n = Number(s);
+    const o = setInterval(t, e);
+    n = Number(o);
   }
   function s() {
     clearInterval(n);
@@ -472,17 +467,17 @@ function me(t, e = 16.66) {
   };
 }
 export {
-  U as PluginManager,
+  B as PluginManager,
   oe as capitalizeFirstLetter,
   w as deepClone,
-  B as deepCompareAndModify,
-  se as deepEqual,
+  U as deepCompareAndModify,
+  ue as deepEqual,
   ie as findSchemaById,
-  ae as getAttributeValue,
-  ue as getMatchedById,
-  K as getUUID,
+  le as getAttributeValue,
+  ae as getMatchedById,
+  J as getUUID,
   v as loadAsyncComponent,
-  w as pluginManager,
+  C as pluginManager,
   pe as revoke,
   ce as setAttributeValue,
   de as useElementDrag,
