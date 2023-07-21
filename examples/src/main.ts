@@ -3,9 +3,9 @@ import './style.css'
 import App from './App.vue'
 import { pluginManager } from "@jiaomatech/designer-utils"
 // // // 使用Elemnt UI
-// import 'element-plus/dist/index.css'
-// import { setupElementPlus } from '@k-designer/ui/elementPlus'
-// setupElementPlus(pluginManager)
+import 'element-plus/dist/index.css'
+import { setupElementPlus } from '@k-designer/ui/elementPlus'
+setupElementPlus(pluginManager)
 
 // // 使用Antd UI
 import 'ant-design-vue/dist/antd.css'

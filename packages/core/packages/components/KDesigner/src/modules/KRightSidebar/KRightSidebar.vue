@@ -3,6 +3,7 @@
     v-if="sidebarComponent"
     class="k-right-sidebar"
   >
+  <KBreadcrumb />
     <ul class="actions-container">
       <li
         v-for="(item, index) in rightSidebars"
@@ -24,6 +25,7 @@
 </template>
 <script lang="ts" setup>
 import { ref, shallowRef } from 'vue'
+import KBreadcrumb from './k-breadcrumb.vue'
 import { pluginManager, RightSidebarModel } from '@jiaomatech/designer-utils'
 // import { RightSidebarModel } from '@jiaomatech/designer-utils/pluginManager'
 

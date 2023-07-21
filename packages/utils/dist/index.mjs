@@ -31,12 +31,12 @@ function B(t, e) {
     e.hasOwnProperty(n) || (Array.isArray(e) ? t.splice(n, 1) : delete t[n]);
   });
 }
-function se(t, e, n = /* @__PURE__ */ new WeakMap()) {
-  const r = (o) => {
-    if (Array.isArray(o))
-      return o.map(r);
-    if (typeof o == "object" && o !== null) {
-      if (n.has(o))
+function ue(t, e, n = /* @__PURE__ */ new WeakMap()) {
+  const r = (s) => {
+    if (Array.isArray(s))
+      return s.map(r);
+    if (typeof s == "object" && s !== null) {
+      if (n.has(s))
         return "[Circular]";
       n.set(o, !0);
       const s = Object.keys(o).sort(), a = {};
@@ -44,11 +44,11 @@ function se(t, e, n = /* @__PURE__ */ new WeakMap()) {
         a[i] = r(o[i]);
       }), n.delete(o), a;
     } else
-      return o;
+      return s;
   };
   return JSON.stringify(r(t)) === JSON.stringify(r(e));
 }
-const v = (t, e) => G({
+const v = (t, e) => B({
   loader: t,
   loadingComponent: e,
   delay: 80
@@ -81,15 +81,15 @@ function ue(t, e) {
   }
   return t.forEach(o), r || console.error(`没有查询到id为${e}的节点`), n;
 }
-function ae(t, e) {
+function le(t, e) {
   const n = t.split(".");
   let r = e;
-  for (let o = 0; o < n.length; o++)
-    if (r = r[n[o]], r == null && r !== !1 && r !== 0)
+  for (let s = 0; s < n.length; s++)
+    if (r = r[n[s]], r == null && r !== !1 && r !== 0)
       return;
   return r;
 }
-function le(t, e, n) {
+function ce(t, e, n) {
   const r = e.split(".");
   let o = n;
   r.forEach((s, a) => {
@@ -100,12 +100,12 @@ function le(t, e, n) {
     o = o[s] ?? (o[s] = {});
   });
 }
-class J {
+class U {
   constructor() {
     m(this, "components", {});
     m(this, "componentConfigs", {});
     m(this, "schemaGroup", []);
-    m(this, "schemaGroupList", p([]));
+    m(this, "schemaGroupList", f([]));
     m(this, "viewsContainers", {
       activitybars: [],
       rightSidebars: []
@@ -227,7 +227,7 @@ class J {
           ...s,
           id: K()
         };
-      }).filter((o) => o);
+      }).filter((s) => s);
       return {
         ...n,
         list: r
@@ -284,7 +284,6 @@ function ce() {
         f[l.methodName](...c);
         return;
       }
-      (h = (d = e.value)[l.methodName]) == null || h.call(d, ...c);
     });
   }
   return {
@@ -298,7 +297,7 @@ function ce() {
   };
 }
 function R() {
-  const t = p([]), e = p([]), n = p(null);
+  const t = f([]), e = f([]), n = f(null);
   let r = 0;
   function o(i, u = "插入组件") {
     const c = Date.now();
@@ -307,7 +306,7 @@ function R() {
       record: JSON.stringify(i)
     }, t.value.length > 20 && t.value.unshift());
   }
-  function s() {
+  function o() {
     if (t.value.length === 0)
       return !1;
     const i = t.value.pop();
@@ -334,7 +333,7 @@ function E(t) {
 }
 function P(t) {
   let e = 0, n, r;
-  const o = () => {
+  const s = () => {
     e -= 1, r && e <= 0 && (r.stop(), n = void 0, r = void 0);
   };
   return (...s) => (e += 1, n || (r = T(!0), n = r.run(() => t(...s))), E(o), n);
@@ -401,10 +400,10 @@ function g(t, e, n = {}) {
   return D(t, e, _(N({}, n), { eventName: "keyup" }));
 }
 function j() {
-  const t = p(!1), e = p(!1), n = p(!1);
+  const t = f(!1), e = f(!1), n = f(!1);
   return y(" ", (r) => {
-    var o = r.target;
-    ["INPUT", "TEXTAREA"].includes(o.tagName) || r.preventDefault(), t.value = !0;
+    var s = r.target;
+    ["INPUT", "TEXTAREA"].includes(s.tagName) || r.preventDefault(), t.value = !0;
   }), g(" ", () => {
     t.value = !1;
   }), y("Shift", (r) => {
@@ -419,7 +418,7 @@ function j() {
 }
 function ee() {
   return {
-    canvasScale: p(1)
+    canvasScale: f(1)
   };
 }
 const te = P(ee), $ = P(j);
@@ -441,39 +440,39 @@ function pe(t) {
   }
   return { handleElementDragStart: o, handleElementDrag: s, handleElementDragEnd: a };
 }
-function de(t) {
+function he(t) {
   const { pressCtrl: e } = $(), { canvasScale: n } = te();
-  function r(o) {
+  function r(s) {
     if (!e.value)
       return;
-    o.preventDefault();
-    let s = 0;
-    o.deltaY < 0 ? s = n.value + 0.05 : s = n.value - 0.05, !(s > 2 || s < 0.2) && (n.value = s);
+    s.preventDefault();
+    let o = 0;
+    s.deltaY < 0 ? o = n.value + 0.05 : o = n.value - 0.05, !(o > 2 || o < 0.2) && (n.value = o);
   }
   return O(
     () => n.value,
-    (o) => {
-      t.value && (t.value.style.transform = `scale(${o})`);
+    (s) => {
+      t.value && (t.value.style.transform = `scale(${s})`);
     }
   ), { handleZoom: r, canvasScale: n };
 }
-function he(t, e = 16.66) {
+function me(t, e = 16.66) {
   let n;
   function r() {
     clearInterval(n);
     const s = setInterval(t, e);
     n = Number(s);
   }
-  function o() {
+  function s() {
     clearInterval(n);
   }
   return {
     startTimedQuery: r,
-    stopTimedQuery: o
+    stopTimedQuery: s
   };
 }
 export {
-  J as PluginManager,
+  U as PluginManager,
   oe as capitalizeFirstLetter,
   w as deepClone,
   B as deepCompareAndModify,
@@ -483,14 +482,14 @@ export {
   ue as getMatchedById,
   K as getUUID,
   v as loadAsyncComponent,
-  U as pluginManager,
-  fe as revoke,
-  le as setAttributeValue,
-  pe as useElementDrag,
-  de as useElementZoom,
-  ce as usePageManager,
+  w as pluginManager,
+  pe as revoke,
+  ce as setAttributeValue,
+  de as useElementDrag,
+  he as useElementZoom,
+  fe as usePageManager,
   $ as useShareKeyPress,
   te as useShareStore,
   ee as useStore,
-  he as useTimedQuery
+  me as useTimedQuery
 };

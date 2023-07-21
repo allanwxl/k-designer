@@ -8,7 +8,9 @@ export default {
     field: 'number',
     input: true,
     componentProps: {
-      placeholder: '请输入'
+      placeholder: '请输入',
+      size: 'medium',
+      buttonPlacement: 'right'
     }
   },
   config: {
@@ -34,9 +36,88 @@ export default {
         field: 'componentProps.placeholder'
       },
       {
+        label: '尺寸',
+        type: 'select',
+        field: 'componentProps.size',
+        componentProps: {
+          options: [
+            {
+              label: 'tiny',
+              value: 'tiny'
+            },
+            {
+              label: 'small',
+              value: 'small'
+            },
+            {
+              label: 'medium',
+              value: 'medium'
+            },
+            {
+              label: 'large',
+              value: 'large'
+            }
+          ]
+        }
+      },
+      {
+        label: '控制按钮位置',
+        type: 'select',
+        field: 'componentProps.buttonPlacement',
+        componentProps: {
+          options: [
+            {
+              label: 'both',
+              value: 'both'
+            },
+            {
+              label: 'right',
+              value: 'right'
+            }
+          ]
+        }
+      },
+      {
+        label: '最大值',
+        type: 'number',
+        field: 'componentProps.max',
+        componentProps: {
+          placeholder: '请输入'
+        }
+      },
+      {
+        label: '最小值',
+        type: 'number',
+        field: 'componentProps.min',
+        componentProps: {
+          placeholder: '请输入'
+        }
+      },
+      {
+        label: '步长',
+        type: 'number',
+        field: 'componentProps.step',
+        componentProps: {
+          placeholder: '请输入'
+        }
+      },
+      {
+        label: '精度',
+        type: 'number',
+        field: 'componentProps.precision',
+        componentProps: {
+          placeholder: '请输入'
+        }
+      },
+      {
         label: '隐藏',
         type: 'switch',
         field: 'componentProps.hidden'
+      },
+      {
+        label: '可清空',
+        type: 'switch',
+        field: 'componentProps.clearable'
       },
       {
         label: '禁用',
