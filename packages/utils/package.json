@@ -1,15 +1,10 @@
 {
-  "name": "@jiaomatech/designer-utils",
-  "version": "1.0.5",
-  "description": "k-designer utils",
-  "main": "dist/index.mjs",
-  "module": "dist/index.mjs",
-  "typings": "dist/index.d.ts",
+  "name": "@epic-designer/utils",
+  "version": "1.0.0",
+  "description": "epic-designer utils",
+  "main": "index.ts",
   "scripts": {
     "build": "vue-tsc --noEmit && vite build"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "author": "jiaomatech"
+  "author": "kchengz"
 }

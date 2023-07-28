@@ -1,6 +1,6 @@
 import { defineComponent, h, renderSlot, type PropType } from 'vue'
 import { ElTabs } from 'element-plus'
-import { type NodeItem } from '@jiaomatech/designer-core/packages/types/kDesigner'
+import { type NodeItem } from '@epic-designer/core/types/epic-designer'
 export default defineComponent({
   props: {
     record: {

@@ -1,4 +1,4 @@
-import { type NodeItem } from '@jiaomatech/designer-core/packages/types/kDesigner';
+import { type NodeItem } from '@epic-designer/core/types/epic-designer';
 import { type Ref } from 'vue';
 /**
 历史记录模型

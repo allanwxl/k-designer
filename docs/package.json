@@ -1,6 +1,6 @@
 {
-  "name": "docs",
+  "name": "@epic-designer/docs",
   "version": "1.0.0",
-  "description": "k-designer docs",
+  "description": "epic-designer docs",
   "author": "kchengz"
 }

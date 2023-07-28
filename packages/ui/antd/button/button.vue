@@ -5,8 +5,8 @@
 </template>
 <script lang="ts" setup>
 import { PropType } from 'vue'
-import type { NodeItem } from '@jiaomatech/designer-core/packages/types/kDesigner'
-import Button from 'ant-design-vue/es/button'
+import type { NodeItem } from '@epic-designer/core/types/epic-designer'
+import Button from 'ant-design-vue/lib/button'
 const props = defineProps({
   record: {
     type: Object as PropType<NodeItem>,

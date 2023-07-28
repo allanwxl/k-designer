@@ -1,7 +1,7 @@
 import type { PropType } from 'vue'
 import { defineComponent, h, renderSlot } from 'vue'
 import { NTabPane } from 'naive-ui'
-import { type NodeItem } from '@jiaomatech/designer-core/packages/types/kDesigner'
+import { type NodeItem } from '@epic-designer/core/types/epic-designer'
 export default defineComponent({
   props: {
     record: {
