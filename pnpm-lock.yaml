@@ -16,13 +16,13 @@ importers:
         version: registry.npmmirror.com/less@4.1.3
     devDependencies:
       '@jiaomatech/designer-core':
-        specifier: workspace:*
+        specifier: ^0.0.51
         version: link:packages/core
       '@jiaomatech/designer-ui':
-        specifier: workspace:*
+        specifier: ^1.0.6
         version: link:packages/ui
       '@jiaomatech/designer-utils':
-        specifier: workspace:*
+        specifier: ^1.0.5
         version: link:packages/utils
       '@turbo/gen':
         specifier: ^1.10.7

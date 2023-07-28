@@ -23,9 +23,9 @@
     "less": "^4.1.3"
   },
   "devDependencies": {
-    "@jiaomatech/designer-core": "^0.0.51",
-    "@jiaomatech/designer-ui": "^1.0.6",
-    "@jiaomatech/designer-utils": "^1.0.5",
+    "@jiaomatech/designer-core": "workspace:*",
+    "@jiaomatech/designer-ui": "workspace:*",
+    "@jiaomatech/designer-utils": "workspace:*",
     "@turbo/gen": "^1.10.7",
     "@vitejs/plugin-vue": "^4.2.3",
     "ant-design-vue": "^3.2.20",

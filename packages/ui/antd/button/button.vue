@@ -6,7 +6,7 @@
 <script lang="ts" setup>
 import { PropType } from 'vue'
 import type { NodeItem } from '@jiaomatech/designer-core/packages/types/kDesigner'
-import Button from 'ant-design-vue/lib/button'
+import Button from 'ant-design-vue/es/button'
 const props = defineProps({
   record: {
     type: Object as PropType<NodeItem>,

@@ -31,6 +31,8 @@ import KPreview from '../KPreview/KPreview.vue'
 import { ref, inject } from 'vue'
 import { pluginManager, revoke, deepCompareAndModify } from '@jiaomatech/designer-utils'
 import { PageSchema, Designer } from '../../../../../types/kDesigner'
+
+console.log('Kheader-------> Components', pluginManager.getComponents())
 const pageSchema = inject('pageSchema') as PageSchema
 const designer = inject('designer') as Designer
 const emit = defineEmits(['save'])

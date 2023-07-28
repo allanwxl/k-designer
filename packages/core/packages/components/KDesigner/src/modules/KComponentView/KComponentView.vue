@@ -3,9 +3,9 @@
     <!-- 搜素框 start -->
     <div class="search-box px-10px pr-14px py-6px">
       <Input placeholder="请输入组件名称" v-model="keyword" v-model:value="keyword">
-      <template #prefix>
-        <span class="iconfont icon-yulan" />
-      </template>
+        <template #prefix>
+          <span class="iconfont icon-yulan" />
+        </template>
       </Input>
     </div>
     <!-- 搜素框 end -->
