@@ -23,6 +23,7 @@ import FormItem from './form-item'
 import Button from './button'
 import Modal from './modal'
 import colorPicker from './color-picker'
+import Slider from './slider'
 
 
 export function setupAntd (pluginManager: PluginManager): void {
@@ -55,6 +56,7 @@ export function setupAntd (pluginManager: PluginManager): void {
     DatePicker,
     Cascader,
     Switch,
+    Slider,
     UploadImage,
     UploadFile,
     Card,
@@ -82,6 +84,7 @@ export function setupAntd (pluginManager: PluginManager): void {
         'number',
         'password',
         'select',
+        'slider',
         'checkbox',
         'radio',
         'date',

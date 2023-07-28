@@ -1,7 +1,8 @@
 <template>
   <!-- <button @click="handleGet">获取值</button> -->
   <!-- <button @click="handleReset">重置操作</button> -->
-  <EDesigner ref="designerRef" @save="handleSubmit" />
+  <EDesigner ref="designerRef" @save="handleSubmit" >
+  </EDesigner>
 </template>
 <script lang="ts" setup>
 import { EDesigner, type PageSchema } from '@jiaomatech-designer/core'

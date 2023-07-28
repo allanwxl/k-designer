@@ -16,7 +16,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { EBuilder } from '@jiaomatech-designer/core/packages'
+import { EBuilder } from '@jiaomatech-designer/core'
 import { NodeItem } from '@jiaomatech-designer/core/types/epic-designer'
 
 const kfb = ref<any>(null)
