@@ -182,7 +182,7 @@ const pageSchema = {
 ```
 
 <script setup>
-import { EBuilder } from "epic-designer";
+import { EBuilder } from "packages/jiaomatech-designer";
 import { ref } from 'vue'
 
 const ebForm = ref(null)

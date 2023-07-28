@@ -17,7 +17,7 @@
 <script lang="ts" setup>
 import { inject } from 'vue'
 import { Designer, NodeItem } from '../../../../../types/epic-designer'
-import { pluginManager } from '@epic-designer/utils'
+import { pluginManager } from '@jiaomatech-designer/utils'
 const designer = inject('designer') as Designer
 /**
  * 选中点击节点元素

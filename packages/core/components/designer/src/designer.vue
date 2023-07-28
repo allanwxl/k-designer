@@ -30,7 +30,7 @@
 <script lang="ts" setup>
 import { provide, reactive, toRaw, watch, nextTick } from 'vue'
 import { DesignerState, NodeItem, FormDataModel, PageSchema } from '../../../types/epic-designer'
-import { getMatchedById, loadAsyncComponent, revoke, usePageManager, deepCompareAndModify, deepClone } from '@epic-designer/utils'
+import { getMatchedById, loadAsyncComponent, revoke, usePageManager, deepCompareAndModify, deepClone } from '@jiaomatech-designer/utils'
 
 const EHeader = loadAsyncComponent(() => import('./modules/header/index.vue'))
 const EActionBar = loadAsyncComponent(() => import('./modules/actionBar/index.vue'))

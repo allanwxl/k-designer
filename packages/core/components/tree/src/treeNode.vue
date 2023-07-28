@@ -14,7 +14,7 @@
 import { NodeItem } from '../../../types/epic-designer'
 import type { PropType } from 'vue'
 import { inject, computed, Ref, h, defineComponent, Slots } from 'vue'
-import { pluginManager } from '@epic-designer/utils'
+import { pluginManager } from '@jiaomatech-designer/utils'
 defineOptions({
   name: 'ETreeNode'
 })

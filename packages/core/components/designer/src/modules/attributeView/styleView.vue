@@ -19,7 +19,7 @@
 <script lang="ts" setup>
 import ENode from '../../../../node/index'
 import { Designer, NodeItem, PageSchema } from '../../../../../types/epic-designer'
-import { revoke, getAttributeValue, setAttributeValue } from '@epic-designer/utils'
+import { revoke, getAttributeValue, setAttributeValue } from '@jiaomatech-designer/utils'
 
 import { inject, computed } from 'vue'
 const designer = inject('designer') as Designer

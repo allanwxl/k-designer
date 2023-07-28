@@ -11,7 +11,7 @@
 <script lang="ts" setup>
 import { PropType, computed, ref, nextTick, toRaw, watch } from 'vue'
 import EActionEditorItem from './src/EActionEditorItem.vue'
-import { pluginManager } from '@epic-designer/utils'
+import { pluginManager } from '@jiaomatech-designer/utils'
 import EActionModal from './src/EActionModal.vue'
 const Collapse = pluginManager.getComponent('Collapse')
 const CollapseItem = pluginManager.getComponent('CollapseItem')

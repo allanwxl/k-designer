@@ -43,7 +43,7 @@
 <script lang="ts" setup>
 import draggable from 'vuedraggable'
 import { ref, toRaw, computed, inject } from 'vue'
-import { getUUID, deepClone, findSchemaById, pluginManager, revoke } from '@epic-designer/utils'
+import { getUUID, deepClone, findSchemaById, pluginManager, revoke } from '@jiaomatech-designer/utils'
 import { NodeItem, PageSchema, Designer } from '../../../../../types/epic-designer'
 const Input = pluginManager.getComponent('input')
 const pageSchema = inject('pageSchema') as PageSchema

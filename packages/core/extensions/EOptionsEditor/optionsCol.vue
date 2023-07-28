@@ -21,7 +21,7 @@
 
 <script lang="ts" setup>
 import draggable from 'vuedraggable'
-import { pluginManager } from '@epic-designer/utils'
+import { pluginManager } from '@jiaomatech-designer/utils'
 import { inject,computed } from 'vue';
 interface Option {
   label: string,

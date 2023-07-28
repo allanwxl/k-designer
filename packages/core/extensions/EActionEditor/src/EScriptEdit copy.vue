@@ -50,7 +50,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { pluginManager, PageManager } from '@epic-designer/utils'
+import { pluginManager, PageManager } from '@jiaomatech-designer/utils'
 import { ref, inject, computed } from 'vue'
 import ETree from '../../../components/tree'
 import { NodeItem, PageSchema } from '../../../types/epic-designer'

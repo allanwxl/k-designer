@@ -28,8 +28,8 @@
 </template>
 <script lang="ts" setup>
 import { ref, shallowRef } from 'vue'
-import { pluginManager } from '@epic-designer/utils'
-import { ActivitybarModel } from '@epic-designer/utils/pluginManager'
+import { pluginManager } from '@jiaomatech-designer/utils'
+import { ActivitybarModel } from '@jiaomatech-designer/utils/pluginManager'
 defineOptions({
   name: 'EActionBar'
 })

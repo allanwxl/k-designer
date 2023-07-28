@@ -22,7 +22,7 @@
 <script lang="ts" setup>
 import { watchOnce, useElementSize, useResizeObserver } from '@vueuse/core'
 import type { NodeItem } from '../../../../../types/epic-designer'
-import { useShareKeyPress, useElementDrag, useElementZoom } from '@epic-designer/utils'
+import { useShareKeyPress, useElementDrag, useElementZoom } from '@jiaomatech-designer/utils'
 import { ref, nextTick, watch, computed, onMounted } from 'vue'
 import Toolbar from './toolbar.vue'
 const props = defineProps<{

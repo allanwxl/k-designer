@@ -24,7 +24,7 @@
     <!-- 工具条 end  -->
 </template>
 <script lang="ts" setup>
-import { useShareStore, pluginManager, deepCompareAndModify } from '@epic-designer/utils'
+import { useShareStore, pluginManager, deepCompareAndModify } from '@jiaomatech-designer/utils'
 import type { PageSchema } from '../../../../../types/epic-designer'
 import { computed, inject, ref } from 'vue'
 const Slider = pluginManager.getComponent('slider')

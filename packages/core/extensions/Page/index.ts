@@ -1,4 +1,4 @@
-import { type ComponentConfigModel } from '@epic-designer/utils/pluginManager'
+import { type ComponentConfigModel } from '@jiaomatech-designer/utils/pluginManager'
 
 export default {
   component: async () => await import('./index.vue'),

@@ -14,9 +14,9 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@epic-designer/core': path.resolve(__dirname, '../core'),
-      '@epic-designer/ui': path.resolve(__dirname, '../ui'),
-      '@epic-designer/utils': path.resolve(__dirname, '../utils'),
+      '@jiaomatech-designer/core': path.resolve(__dirname, '../core'),
+      '@jiaomatech-designer/ui': path.resolve(__dirname, '../ui'),
+      '@jiaomatech-designer/utils': path.resolve(__dirname, '../utils'),
     },
     dedupe: ['vue']
   },

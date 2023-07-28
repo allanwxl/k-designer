@@ -53,7 +53,7 @@ function handleSubmit(e) {
 
 <script setup>
 import "epic-designer/dist/style.css";
-import { pluginManager,EDesigner,setupElementPlus } from "epic-designer";
+import { pluginManager,EDesigner,setupElementPlus } from "packages/jiaomatech-designer";
 import 'element-plus/dist/index.css'
 setupElementPlus(pluginManager);
 

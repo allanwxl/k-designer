@@ -14,10 +14,10 @@
     "less": "^4.1.3"
   },
   "devDependencies": {
-    "@epic-designer/core": "workspace:*",
-    "@epic-designer/ui": "workspace:*",
-    "@epic-designer/utils": "workspace:*",
-    "epic-designer": "workspace:*",
+    "@jiaomatech-designer/core": "workspace:*",
+    "@jiaomatech-designer/ui": "workspace:*",
+    "@jiaomatech-designer/utils": "workspace:*",
+    "jiaomatech-designer": "workspace:*",
     "@turbo/gen": "^1.10.9",
     "@vitejs/plugin-vue": "^4.2.3",
     "ant-design-vue": "^3.2.20",

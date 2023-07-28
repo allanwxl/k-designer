@@ -1,4 +1,4 @@
-import { type ComponentConfigModel } from '@epic-designer/utils'
+import { type ComponentConfigModel } from '@jiaomatech-designer/utils'
 export default {
   component: () => import('./uploadImage'),
   defaultSchema: {

@@ -1,4 +1,4 @@
-import { type PluginManager } from '@epic-designer/utils'
+import { type PluginManager } from '@jiaomatech-designer/utils'
 import MonacoEditor from './MonacoEditor'
 import Page from './Page'
 

@@ -4,7 +4,7 @@
   <EDesigner ref="designerRef" @save="handleSubmit" />
 </template>
 <script lang="ts" setup>
-import { EDesigner, type PageSchema } from '@epic-designer/core'
+import { EDesigner, type PageSchema } from '@jiaomatech-designer/core'
 import { ref } from 'vue'
 const designerRef = ref<typeof EDesigner>()
 // function handleGet () {

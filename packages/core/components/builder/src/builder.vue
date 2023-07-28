@@ -21,7 +21,7 @@
 import ENode from '../../node'
 import { reactive, provide, ref, watch, useSlots, nextTick } from 'vue'
 import { PageSchema, FormDataModel } from '../../../types/epic-designer'
-import { loadAsyncComponent, deepCompareAndModify, usePageManager } from '@epic-designer/utils'
+import { loadAsyncComponent, deepCompareAndModify, usePageManager } from '@jiaomatech-designer/utils'
 const EAsyncLoader = loadAsyncComponent(() => import('../../asyncLoader/index.vue'))
 
 const pageManager = usePageManager()

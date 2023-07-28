@@ -1,12 +1,12 @@
 <template>
   <header class="epic-header relative">
+
     <div class="epic-header-item items-center flex text-12px text-#3d3d3d">
       <slot name="prefix">
         <img src="../../../../../static/logo.png" class="w-17px h-17px" alt="" srcset="">
         <span class="ml-4"> epic-designer</span>
       </slot>
     </div>
-
     <div class="epic-header-item epic-header-title absolute text-12px text-#3d3d3d">
       <slot name="title">epic-designer默认项目</slot>
     </div>
@@ -33,7 +33,7 @@
 </template>
 <script lang="ts" setup>
 import { ref, inject } from 'vue'
-import { pluginManager, revoke, deepCompareAndModify } from '@epic-designer/utils'
+import { pluginManager, revoke, deepCompareAndModify } from '@jiaomatech-designer/utils'
 import { PageSchema, Designer } from '../../../../../types/epic-designer'
 import EPreview from './../preview/index.vue'
 const pageSchema = inject('pageSchema') as PageSchema

@@ -25,7 +25,7 @@
 import ETree from '../../../../tree'
 import { inject, computed } from 'vue'
 import { PageSchema, Designer } from '../../../../../types/epic-designer'
-import { pluginManager } from '@epic-designer/utils'
+import { pluginManager } from '@jiaomatech-designer/utils'
 const designer = inject('designer') as Designer
 const pageSchema = inject('pageSchema') as PageSchema
 

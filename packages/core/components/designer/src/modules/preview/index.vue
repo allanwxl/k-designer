@@ -19,7 +19,7 @@
 </template>
 <script lang="ts" setup>
 import EBuilder from '../../../../builder'
-import { pluginManager, getUUID } from '@epic-designer/utils'
+import { pluginManager, getUUID } from '@jiaomatech-designer/utils'
 import { ref, inject } from 'vue'
 import { PageSchema } from '../../../../../types/epic-designer'
 

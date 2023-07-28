@@ -40,7 +40,7 @@
   </Modal>
 </template>
 <script lang="ts" setup>
-import { pluginManager, PageManager, deepClone, findSchemaById } from '@epic-designer/utils'
+import { pluginManager, PageManager, deepClone, findSchemaById } from '@jiaomatech-designer/utils'
 import { ref, inject, toRaw, reactive, computed, nextTick } from 'vue'
 import ETree from '../../../components/tree'
 import { NodeItem, PageSchema, FormDataModel } from '../../../types/epic-designer'

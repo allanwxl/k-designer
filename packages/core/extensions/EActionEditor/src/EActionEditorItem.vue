@@ -45,7 +45,7 @@
 </template>
 <script lang="ts" setup>
 import { type PropType, inject } from 'vue'
-import { findSchemaById } from '@epic-designer/utils'
+import { findSchemaById } from '@jiaomatech-designer/utils'
 import { PageSchema } from '../../../types/epic-designer'
 import draggable from 'vuedraggable'
 

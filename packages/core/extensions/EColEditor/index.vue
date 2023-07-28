@@ -28,7 +28,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { pluginManager, getUUID } from '@epic-designer/utils'
+import { pluginManager, getUUID } from '@jiaomatech-designer/utils'
 import { NodeItem } from '../../types/epic-designer'
 import { computed, PropType } from 'vue'
 

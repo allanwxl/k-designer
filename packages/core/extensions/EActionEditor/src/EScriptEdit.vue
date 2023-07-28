@@ -8,7 +8,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { pluginManager } from '@epic-designer/utils'
+import { pluginManager } from '@jiaomatech-designer/utils'
 import { ref, inject } from 'vue'
 import { PageSchema } from '../../../types/epic-designer'
 const MonacoEditor = pluginManager.getComponent('monacoEditor')
