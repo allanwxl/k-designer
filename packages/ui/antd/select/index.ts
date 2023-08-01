@@ -19,6 +19,7 @@ export default {
         }
       ],
       listHeight:256,
+      tree: false,
       placeholder: '请选择',
       placement: 'bottomLeft'
     }
@@ -52,6 +53,11 @@ export default {
         label: 'label包装到value中',
         type: 'switch',
         field: 'componentProps.labelInValue'
+      },
+      {
+        label: '下拉菜单和选择器是否同宽',
+        type: 'switch',
+        field: 'componentProps.dropdownMatchSelectWidth'
       },
       {
         label: '设置弹窗高度',
@@ -136,6 +142,11 @@ export default {
         field: 'componentProps.hidden'
       },
       {
+        label: '树型',
+        type: 'switch',
+        field: 'componentProps.tree'
+      },
+      {
         label: '禁用',
         type: 'switch',
         field: 'componentProps.disabled'
@@ -153,6 +164,9 @@ export default {
         layout: "vertical",
         field: "componentProps.options",
         describe: "校验规则需要配合表单使用",
+        componentProps: {
+          tree: false
+        }
       }
     ],
     event: [

@@ -12,7 +12,7 @@
             <span class="icon iconfont">&#xe612;</span>
         </div> -->
         <!-- 缩放操作 start  -->
-        <div class="pr-8px w-82px cursor-pointer">
+        <div class="pr-8px w-90px cursor-pointer">
             <Select v-model:value="canvasScaleComuted" v-model="canvasScaleComuted" :options="canvasScaleOptions"
                 size="small"></Select>
         </div>

@@ -12,7 +12,11 @@ import { pluginManager } from '@jiaomatech-designer/utils'
 import { provide, computed } from 'vue';
 const Button = pluginManager.getComponent('button')
 const props = defineProps<{
-  tree: boolean,
+  tree: {
+    type: Boolean,
+    required: false,
+    default: () => false
+  },
   modelValue: Option[],
 }>()
 
