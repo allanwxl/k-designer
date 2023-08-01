@@ -129,7 +129,7 @@ function handleClick(e: NodeItem) {
   // console.log(pageSchema)
   // console.log(JSON.stringify(designer.state.checkedNode, null, 2))
   try {
-    const component = findSchemaById(pageSchema.schemas, e?.id)
+    const component = findSchemaById(pageSchema.schemas, e?.id ?? '')
     if (component) {
       return false
     }
