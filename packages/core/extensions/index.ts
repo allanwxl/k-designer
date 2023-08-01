@@ -40,6 +40,14 @@ export function setupComponent (pluginManager: PluginManager): void {
       await import('../components/designer/src/modules/outline/outline.vue')
   })
 
+  pluginManager.registerActivitybar({
+    id: 'temp_view',
+    title: '模板',
+    icon: 'icon-fuzhi3',
+    component: async () =>
+      await import('../components/designer/src/modules/tempView/tempList.vue')
+  })
+
   pluginManager.registerRightSidebar({
     id: 'attribute_view',
     title: '属性',

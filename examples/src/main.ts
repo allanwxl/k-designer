@@ -11,7 +11,7 @@ import { pluginManager } from '@jiaomatech-designer/core'
 // 使用Antd UI
 import 'ant-design-vue/dist/antd.css'
 import { setupAntd } from '@jiaomatech-designer/ui/antd'
-setupAntd(pluginManager)
+setupAntd(pluginManager, false)
 
 // 使用NaiveUi UI
 // import { setupNaiveUi } from '@jiaomatech-designer/ui/naiveUi'

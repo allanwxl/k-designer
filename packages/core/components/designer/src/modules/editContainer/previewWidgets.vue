@@ -7,9 +7,11 @@
         {{ designer.state.checkedNode?.label ?? pluginManager.getComponentConfingByType(designer.state.checkedNode?.type
           ?? '')?.defaultSchema.label }}
       </div>
+      <!--
       <div title="复制" class="action-item pointer-events-auto" @click="handleCopy">
         <span class="iconfont icon-fuzhi3" />
       </div>
+      -->
       <div title="删除" class="action-item pointer-events-auto" @click="handleDelete">
         <span class="iconfont icon-shanchu1" />
       </div>

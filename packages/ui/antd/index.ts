@@ -26,7 +26,7 @@ import colorPicker from './color-picker'
 import Slider from './slider'
 
 
-export function setupAntd (pluginManager: PluginManager): void {
+export function setupAntd (pluginManager: PluginManager, showBasicComp: boolean = true): void {
   // 异步加载组件
   pluginManager.component(
     'Collapse',
@@ -76,8 +76,8 @@ export function setupAntd (pluginManager: PluginManager): void {
   // 设置分组显示
   pluginManager.setSchemaGroup([
     {
-      title: '输入',
-      list: [
+      title: '表单',
+      list: showBasicComp ? [
         'form',
         'input',
         'textarea',
@@ -95,7 +95,7 @@ export function setupAntd (pluginManager: PluginManager): void {
         'switch',
         'button',
         'color-picker'
-      ]
+      ] : [ 'form', 'button' ]
     },
     {
       title: '布局',

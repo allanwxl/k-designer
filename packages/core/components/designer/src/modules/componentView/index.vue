@@ -25,9 +25,9 @@
           sort: false,
           animation: 180,
           ghostClass: 'moving'
-        }" item-key="id" class="grid grid-cols-[auto_auto] px-10px gap-2" @end="handleDraggableEnd($event)">
+        }" item-key="id" class="grid grid-cols-[auto_auto] px-10px gap-2" filter=".forbid" @end="handleDraggableEnd($event)">
           <template #item="{ element }">
-            <div class="source-componet-item flex items-center truncate" @click="handleClick(element)">
+            <div class="source-componet-item flex items-center truncate" :class="{ forbid: disabledDragElement(element)}" @click="handleClick(element)">
               <span class="iconfont" :class="element.icon" />
               <div>{{ element.label }}</div>
             </div>
@@ -99,8 +99,21 @@ function handelChecked(item) {
 function handleDraggableEnd(e: any) {
   getSourceSchemaList.value[e.oldIndex] = deepClone({
     ...toRaw(getSourceSchemaList.value[e.oldIndex]),
-    id: getUUID()
+    // id: getUUID()
+    id: getSourceSchemaList.value[e.oldIndex].id || getUUID() // 点击添加节点时候优先使用组件自带的id
   })
+}
+
+function disabledDragElement(targetElement) {
+  if (['button', 'row', 'card', 'form'].includes(targetElement.type)) return false
+  try {
+    // 排除一下公共组件
+    const component = findSchemaById(pageSchema.schemas, targetElement.id)
+    return !!component;
+  } catch (e) {
+    console.log('未查询到当前节点可以继续插入')
+    return false
+  }
 }
 
 /**
@@ -112,6 +125,19 @@ function handleClick(e: NodeItem) {
   if (!data) {
     return false
   }
+  // 新增功能 当选择一次不能再次选择
+  // console.log(pageSchema)
+  // console.log(JSON.stringify(designer.state.checkedNode, null, 2))
+  try {
+    const component = findSchemaById(pageSchema.schemas, e?.id)
+    if (component) {
+      return false
+    }
+  } catch (e) {
+    console.log('未查询到当前节点可以继续插入')
+  }
+
+
   let { list, schema, index } = data
 
   // 如果选中元素存在children字段，则添加到children中
@@ -122,7 +148,7 @@ function handleClick(e: NodeItem) {
 
   const node = deepClone({
     ...toRaw(e),
-    id: getUUID()
+    id: e.id || getUUID() // 点击添加节点时候优先使用组件自带的id
   })
 
   list.splice(index + 1, 0, node)

@@ -11,7 +11,13 @@
       margin-right: 5px;
     }
 
-    &:hover {
+    &.forbid {
+      opacity: 0.5; /* 降低元素的不透明度 */
+      pointer-events: none; /* 禁止元素响应鼠标事件 */
+      cursor: not-allowed; /* 将鼠标光标设置为禁止符号 */
+    }
+
+    &:not(.forbid):hover {
       border-color: @primary-color;
       color: @primary-color;
       background-color: @primary-hover-bg-color;

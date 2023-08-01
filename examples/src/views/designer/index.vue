@@ -13,7 +13,7 @@
 <script lang="ts" setup>
 import { EDesigner, type PageSchema, pluginManager } from '@jiaomatech-designer/core'
 import { ref } from 'vue'
-import { setupDesignerExtensions } from '../../utils/index'
+import { setupDesignerExtensions } from "../../utils"
 const designerRef = ref<typeof EDesigner>()
 // function handleGet () {
 //   console.log(JSON.stringify(designerRef.value!.getData()))
