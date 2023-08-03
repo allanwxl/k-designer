@@ -1,11 +1,10 @@
 import { type ComponentConfigModel } from '@jiaomatech-designer/utils/pluginManager'
-import {nextTick} from 'vue'
 export default {
   component: async () => (await import('naive-ui/lib/slider')).NSlider,
   defaultSchema: {
     label: '滑块',
     type: 'slider',
-    icon: 'icon-number',
+    icon: "icon-menu",
     field: 'slider',
     input: true,
     componentProps: {
