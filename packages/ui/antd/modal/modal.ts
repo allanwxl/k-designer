@@ -20,10 +20,10 @@ export default defineComponent({
         ...attrs,
         title: props.record?.label ?? "",
         class: "epic-modal",
-        visible:attrs.modelValue,
+        visible: attrs.modelValue,
         "onUpdate:visible": handleClose,
-        'body-style':{ padding: '12px' },
-        footer:null
+        "body-style": { padding: "12px" },
+        footer: null,
       } as Record<string, any>;
       const children = record.children ?? [];
       delete record.children;
@@ -53,14 +53,28 @@ export default defineComponent({
           h(
             "div",
             { class: "epic-modal-footer" },
-            h(Space, { align: "end" }, [
-              h(Button, { onClick: handleClose }, "关闭"),
-              h(
-                Button,
-                { type: "primary", onClick: handleOk },
-                record.okText ?? "确定"
-              ),
-            ])
+            h(
+              Space,
+              { align: "end" },
+              {
+                default: () => [
+                  h(
+                    Button,
+                    { onClick: handleClose },
+                    {
+                      default: () => "关闭",
+                    }
+                  ),
+                  h(
+                    Button,
+                    { type: "primary", onClick: handleOk },
+                    {
+                      default: () => record.okText ?? "确定",
+                    }
+                  ),
+                ],
+              }
+            )
           ),
         ],
       });
