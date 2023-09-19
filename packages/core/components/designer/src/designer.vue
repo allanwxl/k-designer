@@ -62,35 +62,7 @@ watch(() => pageSchema.script, e => {
 const defaultSchemas = [{
   type: 'page',
   id: 'root',
-  children: [
-    {
-      "label": "表单",
-      "type": "form",
-      "icon": "icon-qiapian",
-      "labelWidth": 100,
-      "name": "default",
-      "componentProps": {
-        "layout": "horizontal",
-        "labelWidth": 100,
-        "labelLayout": "flex",
-        "labelCol": {
-          "span": 5
-        },
-        "wrapperCol": {
-          "span": 19
-        },
-        "hideRequiredMark": false,
-        "colon": true,
-        "labelAlign": "right",
-        "size": "middle",
-        "style": {
-          "height": "500px"
-        }
-      },
-      "children": [],
-      "id": "9aksqurhsyc00"
-    }
-  ],
+  children: [],
   componentProps: {
     style: {
       padding: '16px'
@@ -114,6 +86,7 @@ pageSchema.script = defaultScript
 provide('pageSchema', pageSchema)
 provide('formData', formData)
 provide('pageManager', pageManager)
+provide('init', init)
 
 function init() {
   // 初始化默认节点

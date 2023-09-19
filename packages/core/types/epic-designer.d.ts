@@ -57,3 +57,10 @@ export interface PageSchema {
   schemas: NodeItem[]
   script?: string
 }
+
+export interface Template {
+  pageSchema: PageSchema,
+  tempName: string,
+  id: string,
+  picUrl?: string
+}
